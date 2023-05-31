@@ -4,10 +4,7 @@ class NationalPark:
         self.name = name
         self._trips = []
         self._visitors = []
-        
 
-       
-        
     @property
     def name(self):
         return self._name
@@ -24,15 +21,13 @@ class NationalPark:
         from classes.trip import Trip
         if isinstance(new_trip, Trip):
             self._trips.append(new_trip)
-        else:
-            raise Exception("must be of type Trip")
+        return self._trips
     
     def visitors(self, new_visitor=None):
         from classes.visitor import Visitor
-        if isinstance(new_visitor, Visitor):
-            self.visitors.append(new_visitor)
-        else:
-            raise Exception("must of type Visitor")
+        if isinstance(new_visitor, Visitor) and new_visitor not in self._visitors:
+            self._visitors.append(new_visitor)
+        return self._visitors
     
     def total_visits(self):
         pass
