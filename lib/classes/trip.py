@@ -33,7 +33,7 @@ class Trip:
     def national_park(self):
         return self._national_park
     
-    @visitor.setter
+    @national_park.setter
     def national_park(self, national_park):
         from classes.national_park import NationalPark
         if isinstance(national_park, NationalPark):
