@@ -1,5 +1,5 @@
 class NationalPark:
-
+    all= []
     def __init__(self, name):
         self.name = name
         self._trips = []

@@ -1,5 +1,6 @@
 class Visitor:
     
+    all=[]
 
     def __init__(self, name):
         self.name = name
@@ -9,14 +10,14 @@ class Visitor:
 
     @property
     def name(self):
-        return self.__name 
+        return self._name 
     
     @name.setter
     def name(self, name):
-        if isinstance(name, str) and len(name) >= 1 and len(name) <= 15 and not hasattr(self, 'name'):
+        if isinstance(name, str) >= 1 and len(name) <= 15 and not hasattr(self, 'name'):
             self._name = name
         else:            
-            raise Exception("Name must be between 1 and 15 characters inclusive")
+            raise Exception("Cannot change the name of the visitor")
         
     def trips(self, new_trip=None):
         from classes.trip import Trip
